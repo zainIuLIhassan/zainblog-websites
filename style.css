@@ -1,0 +1,292 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+  scroll-behavior:smooth;
+}
+
+body{
+  background:#081b29;
+  color:white;
+}
+
+/* Loader */
+
+#loader{
+  position:fixed;
+  width:100%;
+  height:100vh;
+  background:#081b29;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:10000;
+}
+
+.spinner{
+  width:60px;
+  height:60px;
+  border:6px solid white;
+  border-top:6px solid #00abf0;
+  border-radius:50%;
+  animation:spin 1s linear infinite;
+}
+
+@keyframes spin{
+  100%{
+    transform:rotate(360deg);
+  }
+}
+
+/* Header */
+
+header{
+  position:fixed;
+  width:100%;
+  padding:20px 10%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:rgba(0,0,0,.3);
+  backdrop-filter:blur(10px);
+  z-index:1000;
+}
+
+.logo{
+  font-size:30px;
+  color:#00abf0;
+  text-decoration:none;
+  font-weight:700;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  margin-left:35px;
+  transition:.3s;
+}
+
+nav a:hover{
+  color:#00abf0;
+}
+
+/* Home */
+
+.home{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:5rem;
+  padding:100px 10%;
+}
+
+.home-img img{
+  width:350px;
+  border-radius:50%;
+  border:5px solid #00abf0;
+  box-shadow:0 0 50px #00abf0;
+  animation:float 3s ease-in-out infinite;
+}
+
+@keyframes float{
+  50%{
+    transform:translateY(-15px);
+  }
+}
+
+.home-content h1{
+  font-size:60px;
+}
+
+.home-content span{
+  color:#00abf0;
+}
+
+.typing-text{
+  font-size:35px;
+  margin:15px 0;
+}
+
+.typing-text span::before{
+  content:"Frontend Developer";
+  color:#00abf0;
+  animation:words 10s infinite;
+}
+
+@keyframes words{
+  50%{
+    content:"Web Designer";
+  }
+}
+
+.home-content p{
+  margin:20px 0;
+  line-height:1.8;
+}
+
+.social-icons a{
+  display:inline-flex;
+  width:45px;
+  height:45px;
+  background:transparent;
+  border:2px solid #00abf0;
+  border-radius:50%;
+  justify-content:center;
+  align-items:center;
+  color:#00abf0;
+  margin-right:15px;
+  transition:.3s;
+  text-decoration:none;
+}
+
+.social-icons a:hover{
+  background:#00abf0;
+  color:#081b29;
+  box-shadow:0 0 20px #00abf0;
+}
+
+.btn{
+  display:inline-block;
+  margin-top:25px;
+  padding:12px 35px;
+  background:#00abf0;
+  color:#081b29;
+  text-decoration:none;
+  border-radius:40px;
+  font-weight:600;
+}
+
+/* Sections */
+
+section{
+  padding:100px 10%;
+}
+
+.heading{
+  text-align:center;
+  font-size:45px;
+  margin-bottom:50px;
+  color:#00abf0;
+}
+
+.about-content{
+  text-align:center;
+  max-width:800px;
+  margin:auto;
+  line-height:2;
+}
+
+/* Skills */
+
+.skills-container{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:25px;
+}
+
+.skill-box{
+  background:#112e42;
+  padding:40px;
+  border-radius:20px;
+  text-align:center;
+  transition:.4s;
+}
+
+.skill-box:hover{
+  transform:translateY(-10px);
+  box-shadow:0 0 25px #00abf0;
+}
+
+.skill-box i{
+  font-size:60px;
+  color:#00abf0;
+  margin-bottom:20px;
+}
+
+/* Projects */
+
+.project-container{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:25px;
+}
+
+.project-box{
+  background:#112e42;
+  padding:30px;
+  border-radius:20px;
+  transition:.4s;
+}
+
+.project-box:hover{
+  transform:scale(1.05);
+  box-shadow:0 0 20px #00abf0;
+}
+
+/* Contact */
+
+form{
+  max-width:700px;
+  margin:auto;
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+}
+
+form input,
+form textarea{
+  padding:15px;
+  border:none;
+  border-radius:10px;
+  background:#112e42;
+  color:white;
+}
+
+form button{
+  padding:15px;
+  border:none;
+  background:#00abf0;
+  border-radius:30px;
+  font-size:18px;
+  font-weight:600;
+  cursor:pointer;
+}
+
+/* Footer */
+
+footer{
+  text-align:center;
+  padding:30px;
+  background:#06141f;
+}
+
+/* Responsive */
+
+@media(max-width:991px){
+
+  .home{
+    flex-direction:column;
+    text-align:center;
+  }
+
+  .home-img img{
+    width:250px;
+  }
+
+  .home-content h1{
+    font-size:40px;
+  }
+
+}
+
+@media(max-width:768px){
+
+  nav{
+    display:none;
+  }
+
+}
